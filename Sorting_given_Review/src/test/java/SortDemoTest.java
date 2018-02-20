@@ -95,22 +95,22 @@ class SortDemoTest {
     
     
     /**
-     * wrongChoice checks that if the input for runAlgo is smaller than 0, or greater than 5 Bubble sort is used
-     * Boundary cases -10, -1, 0 (should use Bubble Sort anyway), 6, 100
+     * wrongChoice checks that if the input for runAlgo is smaller than 0, or greater than 5 error message is given
+     * Boundary cases -10, -1, 0 (should give error message), 6, 100
      */
     @Test
     public void wrongChoice() {
         data.initializeArray("5 8 5 4");  
         data.runAlgo(-10);
-        assertTrue(data.algo.equals("Bubble Sort"));
+        assertTrue(data.errorMessage.equals("Invalid input"));
         data.runAlgo(-1);
-        assertTrue(data.algo.equals("Bubble Sort"));
+        assertTrue(data.errorMessage.equals("Invalid input"));
         data.runAlgo(0);
         assertTrue(data.algo.equals("Bubble Sort"));
         data.runAlgo(6);
-        assertTrue(data.algo.equals("Bubble Sort"));
+        assertTrue(data.errorMessage.equals("Invalid input"));
         data.runAlgo(100);
-        assertTrue(data.algo.equals("Bubble Sort"));
+        assertTrue(data.errorMessage.equals("Invalid input"));
     }
     
     /**
